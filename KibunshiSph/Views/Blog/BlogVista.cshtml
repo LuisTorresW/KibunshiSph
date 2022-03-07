@@ -1,0 +1,49 @@
+﻿@model IEnumerable<KibunshiSph.Models.Blog>
+
+@{
+    ViewData["Title"] = "BlogVista";
+}
+
+<h1>BlogVista</h1>
+
+<p>
+    <a asp-action="Create" asp-controller="Blog">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.IdBlog)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Titulo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Nombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Texto)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdBlog)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Titulo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Texto)
+            </td>
+            
+        </tr>
+}
+    </tbody>
+</table>

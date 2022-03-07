@@ -1,0 +1,83 @@
+﻿@model KibunshiSph.Models.Superheroes
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Superheroes</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            @*<div class="form-group">
+                <label asp-for="IdSuperheroe" class="control-label"></label>
+                <input asp-for="IdSuperheroe" class="form-control" />
+                <span asp-validation-for="IdSuperheroe" class="text-danger"></span>
+            </div>*@
+            <div class="form-group">
+                <label asp-for="NombreSuperhero" class="control-label"></label>
+                <input asp-for="NombreSuperhero" class="form-control" />
+                <span asp-validation-for="NombreSuperhero" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DescripcionSuperheroe" class="control-label"></label>
+                <input asp-for="DescripcionSuperheroe" class="form-control" />
+                <span asp-validation-for="DescripcionSuperheroe" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FuerzaSuperheroe" class="control-label"></label>
+                <input asp-for="FuerzaSuperheroe" class="form-control" />
+                <span asp-validation-for="FuerzaSuperheroe" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DefensaSuperhero" class="control-label"></label>
+                <input asp-for="DefensaSuperhero" class="form-control" />
+                <span asp-validation-for="DefensaSuperhero" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EspecialSuperheroe" class="control-label"></label>
+                <input asp-for="EspecialSuperheroe" class="form-control" />
+                <span asp-validation-for="EspecialSuperheroe" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="VidaSuperheroe" class="control-label"></label>
+                <input asp-for="VidaSuperheroe" class="form-control" />
+                <span asp-validation-for="VidaSuperheroe" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PoderesSuperhero" class="control-label"></label>
+                <input asp-for="PoderesSuperhero" class="form-control" />
+                <span asp-validation-for="PoderesSuperhero" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UltimateSuperheroe" class="control-label"></label>
+                <input asp-for="UltimateSuperheroe" class="form-control" />
+                <span asp-validation-for="UltimateSuperheroe" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MundoSuperheroe" class="control-label"></label>
+                <input asp-for="MundoSuperheroe" class="form-control" />
+                <span asp-validation-for="MundoSuperheroe" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ImagenSuperheroe" class="control-label"></label>
+                <input asp-for="ImagenSuperheroe" class="form-control" />
+                <span asp-validation-for="ImagenSuperheroe" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

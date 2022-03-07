@@ -1,0 +1,16 @@
+﻿@model List<Mundo>
+
+
+    <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Mundos
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    @foreach (Mundo mun in Model)
+    {
+        <a class="dropdown-item" asp-controller="Superheroes" asp-action="PersonajesMundo" asp-route-idmundo="@mun.IdMundo" >@mun.NomUniverso</a>
+
+    }
+</div>
+           
+    </div>

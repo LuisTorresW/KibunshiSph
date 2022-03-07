@@ -1,0 +1,55 @@
+﻿@model List<Pelis>
+
+
+
+
+<form method="post" class="form-check">
+    <label>Buscar Peli:</label>
+    <input type="text" placeholder="Busca la pelicula"  name="titulos">
+    <button type="submit" class="btn btn-primary">Buscar</button>
+</form>
+
+@if (Model != null)
+{
+
+    <link href="~/css/stylepeli.css" rel="stylesheet" />
+    
+
+    <div class="section">
+        <div id="the-basics">
+
+           @* <input class="typeahead form-control" type="hidden" placeholder="Busca la peli" autocomplete="off" name="titulos" >*@
+            <div class="tt-menu tt-open" style="position: relative;top:100px; left: 70px; z-index: 100; display: block;">
+                <div class="tt-dataset tt-dataset-states">
+                    @foreach (Pelis pel in Model)
+                    {
+                        <div class="man-section tt-suggestion tt-selectable">
+
+                            <div class="image-section">
+                                <img src="~/img/Pelis/@pel.Imagen">
+                            </div>
+                            <div class="description-section">
+                                <h1>@pel.Titulo</h1><p>@pel.Descripcion</p>
+                                <span>
+                                    <i class="fa fa-clock-o" aria-hidden="true">
+                                    </i> @pel.IdPeli <i class="fa fa-map-marker" aria-hidden="true"></i>
+                                </span><div class="more-section">
+                                    <a href="#" target="_blank">
+
+                                    </a>
+                                </div>
+                            </div>
+                            <div style="clear:both;">
+                            </div>
+                        </div>
+                    }
+
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+    
+}

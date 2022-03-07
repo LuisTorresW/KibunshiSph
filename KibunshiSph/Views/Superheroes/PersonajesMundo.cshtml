@@ -1,0 +1,95 @@
+﻿@model IEnumerable<KibunshiSph.Models.Superheroes>
+
+@{
+    ViewData["Title"] = "PersonajesMundo";
+}
+
+<h1>PersonajesMundo</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.IdSuperheroe)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NombreSuperhero)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DescripcionSuperheroe)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FuerzaSuperheroe)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DefensaSuperhero)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EspecialSuperheroe)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.VidaSuperheroe)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PoderesSuperhero)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UltimateSuperheroe)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MundoSuperheroe)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ImagenSuperheroe)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdSuperheroe)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NombreSuperhero)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DescripcionSuperheroe)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FuerzaSuperheroe)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DefensaSuperhero)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EspecialSuperheroe)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VidaSuperheroe)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PoderesSuperhero)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UltimateSuperheroe)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MundoSuperheroe)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ImagenSuperheroe)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -1,0 +1,97 @@
+﻿@model IEnumerable<KibunshiSph.Models.Superheroes>
+
+@{
+    ViewData["Title"] = "SuperheroesMundo";
+}
+
+
+
+<h1>SuperheroesMundo</h1>
+
+
+@{ 
+    List<int> mundo = ViewData["MUNDO"] as List<int>;
+}
+
+<form method="post" class="form form-check">
+    <label>Mundo:</label>
+    <select name="idmundo">
+        @foreach (int mun in mundo)
+        {
+            <option value="@mun">
+                @mun
+            </option>
+        }
+
+    </select>
+    <button type="submit" class="btn btn-primary">Filtrar</button>
+</form>
+
+
+@if (Model != null)
+{
+
+    <table class="table table-dark">
+        <thead>
+            <tr>
+                <th>
+                  Id Superheroe
+                </th>
+                <th>
+                    Nombre
+                </th>
+                <th>
+                    Descripcion
+                </th>
+                <th>
+                  Fuerza
+                </th>
+                <th>
+                  
+                  Vida 
+                </th>
+                
+                <th>
+                   
+                    Mundo
+                </th>
+                <th>
+                   Imagen
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @item.IdSuperheroe
+                    </td>
+                    <td>
+                        @item.NombreSuperhero
+                    </td>
+                    <td>
+                        @item.DescripcionSuperheroe
+                    </td>
+                    <td>
+                        @item.FuerzaSuperheroe
+                    </td>
+                   
+                    <td>
+                        @item.VidaSuperheroe
+                    </td>
+                    
+                    <td>
+                        <a asp-controller="Mundos" asp-action="MundosId" asp-route-id="@item.MundoSuperheroe" class="nav-link text-white">Ir a su Mundo</a>
+                    </td>
+                    <td>
+                       <img src="~/img/Superheroes/@item.ImagenSuperheroe" style="width:200px;height:180px"/>
+                    </td>
+                    
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+

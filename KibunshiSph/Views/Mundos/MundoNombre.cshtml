@@ -1,0 +1,77 @@
+﻿@model IEnumerable<KibunshiSph.Models.Mundo>
+
+@{
+    ViewData["Title"] = "MundoNombre";
+}
+
+@{ 
+    List<string> mun = ViewData["Mundo"] as List<string>;
+}
+
+<form method="post" class="form-check">
+    <label>Mundos:</label>
+   <select name="nombre" >
+       @foreach(string mundo in mun)
+            {
+                <option value="@mundo">
+                    @mundo
+                </option>
+            }
+   </select>
+    <button type="submit" class="btn btn-primary">Buscar</button>
+</form>
+
+
+
+<h1>Mundo por Nombre</h1>
+
+
+@if(Model != null)
+            {
+<table class="table table-dark">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.IdMundo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NomUniverso)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Puntuacion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DescripcionMun)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Imagen)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IdMundo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NomUniverso)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Puntuacion)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DescripcionMun)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Imagen)
+                </td>
+                
+            </tr>
+        }
+    </tbody>
+</table>
+            }
+

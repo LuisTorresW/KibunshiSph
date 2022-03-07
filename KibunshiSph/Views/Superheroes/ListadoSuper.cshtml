@@ -1,0 +1,41 @@
+﻿@model List<Superheroes>
+
+@{
+    ViewData["Title"] = "ListadoSuper";
+}
+
+<h1>Listado Superheroes</h1>
+
+
+
+
+
+    <link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet">
+
+        <div class="id-card-wrapper">
+            @foreach(Superheroes sup in Model)
+                    {
+            <div class="id-card">
+                <div class="profile-row">
+                    <div class="dp">
+                        <div class="dp-arc-outer"></div>
+                        <div class="dp-arc-inner"></div>
+                        <img src="~/img/Superheroes/@sup.ImagenSuperheroe" style="border-radius:50%;max-height:100px;width:100px" >
+                    </div>
+                    <div class="desc">
+                        <h1>@sup.NombreSuperhero</h1>
+                        <p>Strength: @sup.FuerzaSuperheroe</p>
+                        <p>Vida: @sup.VidaSuperheroe</p>
+                        <p>Descripción: @sup.DescripcionSuperheroe</p>
+                        <p><a asp-controller="Superheroes" asp-action="Delete" asp-route-ids="@sup.IdSuperheroe" class="btn btn-danger">Eliminar</a></p>
+                    </div>
+                </div>
+            </div>
+                    }
+
+        </div>
+
+    
+        @section Css{
+            <link href="~/css/style.css" rel="stylesheet" />
+        }
